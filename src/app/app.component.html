@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" [(ngModel)]="filePath" (change)="UploaFileClick($event)" id="inputGroupFile01"
+            ng aria-describedby="inputGroupFileAddon01">
+          <label class="custom-file-label" for="inputGroupFile01">{{filePath}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+          <canvas mdbChart
+              [chartType]="chartType"
+              [datasets]="chartDatasets"
+              [labels]="chartLabels"
+              [colors]="chartColors"
+              [options]="chartOptions"
+              [legend]="true"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)">
+          </canvas>
+      </div>
+  </div>
+</div>
